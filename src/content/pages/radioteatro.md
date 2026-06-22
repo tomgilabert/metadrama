@@ -33,4 +33,4 @@ Las comunicaciones oficiales de la convocatoria y de la apertura de la audición
 
 ¡MUCHAS GRACIAS POR TU PARTICIPACIÓN!
 
-[Textos Audiciones Ciclo de Radioteatro METADRAMA](/Textos-Audiciones-para-el-Ciclo-de-Radioteatro-METADRAMA.pdf/)[Baixa](/Textos-Audiciones-para-el-Ciclo-de-Radioteatro-METADRAMA.pdf/)
+[Textos Audiciones Ciclo de Radioteatro METADRAMA](/uploads/1689_textos-audiciones-para-el-ciclo-de-radioteatro-metadrama.pdf) · [Baixa](/uploads/1689_textos-audiciones-para-el-ciclo-de-radioteatro-metadrama.pdf)

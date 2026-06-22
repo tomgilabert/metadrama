@@ -19,7 +19,7 @@ Gran via de les corts catalanes, 585
 
 ## PROGRAMA
 
-[Programa II Simposio](/Programa-II-Simposio-3.pdf/)[Baixa](/Programa-II-Simposio-3.pdf/)
+[Programa II Simposio](/uploads/Programa-II-Simposio-3.pdf) · [Baixa](/uploads/Programa-II-Simposio-3.pdf)
 
 ---
 

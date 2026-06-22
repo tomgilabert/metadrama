@@ -19,7 +19,7 @@ Gran via de les corts catalanes, 585
 
 ## PROGRAMA
 
-[Programa Simposio METADRAMA](/Programa-Simposio-METADRAMA-1.pdf/)[Descargar Programa](/Programa-Simposio-METADRAMA-1.pdf/)
+[Programa Simposio METADRAMA](/uploads/Programa-Simposio-METADRAMA-1.pdf) · [Descargar Programa](/uploads/Programa-Simposio-METADRAMA-1.pdf)
 
 ---
 

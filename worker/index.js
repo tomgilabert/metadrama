@@ -63,16 +63,26 @@ export default {
       if (data.error) return errorPage(data.error_description || data.error);
 
       const token = data.access_token;
-      // devolver HTML que hace postMessage al opener (Decap CMS)
+      const provider = "github";
+      // Protocolo de Decap CMS: handshake en dos pasos.
+      // 1) popup -> opener: "authorizing:github" (con '*')
+      // 2) opener -> popup: responde con su origin
+      // 3) popup -> opener: "authorization:github:success:{...}" (con ese origin)
       return new Response(
         HTML(
           `<script>
             (function(){
-              var opener = window.opener || (window.parent && window.parent !== window);
-              var msg = { sender: 'decap-cms', event: 'login', token: ${JSON.stringify(token)} };
-              if (opener) opener.postMessage(msg, '*');
-              document.body.innerHTML = '<p>Cerrando ventana…</p>';
-              setTimeout(function(){ window.close(); }, 500);
+              var token = ${JSON.stringify(token)};
+              var provider = ${JSON.stringify(provider)};
+              var payload = 'authorization:github:success:' + JSON.stringify({ token: token, provider: provider });
+              function receiveMessage(message) {
+                window.opener.postMessage(payload, message.origin);
+                window.removeEventListener('message', receiveMessage, false);
+              }
+              window.addEventListener('message', receiveMessage, false);
+              window.opener.postMessage('authorizing:github', '*');
+              document.body.innerHTML = '<p>Autenticado. Cerrando ventana…</p>';
+              setTimeout(function(){ window.close(); }, 1200);
             })();
           </script>`,
         ),
