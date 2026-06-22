@@ -371,13 +371,21 @@ a:hover { border-bottom-color: currentColor; }
 .site-footer a:hover { border-bottom-color: currentColor; }
 .site-footer .footer-social { margin-bottom: .75rem; }
 .site-footer .footer-social a {
-  display: inline-block; margin: 0 .5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 .5rem;
   border: 1px solid rgba(255,255,255,.25);
-  border-radius: 50%;
-  width: 36px; height: 36px; line-height: 36px;
   border-bottom: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  color: var(--color-link);
 }
-.site-footer .footer-social a:hover { background: rgba(255,255,255,.08); }
+.site-footer .footer-social a:hover {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.4);
+}
+.site-footer .footer-social svg { display: block; }
 
 /* ---------- Breadcrumb / parent link ---------- */
 .parent-link {
