@@ -5,5 +5,7 @@
 #   npx wrangler pages deploy dist --project-name=metadrama
 
 name = "metadrama"
-pages_build_output_dir = "dist"
 compatibility_date = "2024-11-01"
+
+[assets]
+directory = "./dist"
