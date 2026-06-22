@@ -1,12 +1,8 @@
 # Redirecciones para Cloudflare Pages
-# Mantener URLs sin extensión y con trailing slash
 
-# /metadrama/* del dominio UB -> /* (en el nuevo dominio)
+# Si migras el dominio pero recibes tráfico residual con el prefijo /metadrama/
+# del sitio viejo de UB, redirige a la URL limpia.
 /metadrama/*  /:splat  301
 
-# Páginas sin extensión: /aula-teatro -> /aula-teatro/
-# (Astro ya genera /aula-teatro/index.html, pero por si acaso)
-/*  /:splat  200
-
-# Panel admin
+# /admin -> /admin/ (trailing slash para Decap CMS)
 /admin  /admin/  301

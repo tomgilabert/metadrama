@@ -1,0 +1,9 @@
+# Configuración para Cloudflare Pages (deploy por CLI opcional)
+# El deploy principal se hace conectando el repo en el panel web de Cloudflare.
+#
+# Uso CLI (alternativo):
+#   npx wrangler pages deploy dist --project-name=metadrama
+
+name = "metadrama"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-11-01"
