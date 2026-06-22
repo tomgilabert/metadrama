@@ -76,27 +76,19 @@ a:hover { border-bottom-color: currentColor; }
   z-index: 0;
 }
 
-/* En la home: position fixed = parallax.
-   La imagen se queda fija en el viewport mientras el contenido sube. */
+/* En la home: parallax con JS. La imagen se mueve hacia arriba
+   más lento que el scroll, creando el efecto de telón que se levanta. */
 .front-page-header .custom-header-media img {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 120%;
   object-fit: cover;
   object-position: center;
-  z-index: 0;
+  will-change: transform;
 }
 
 /* En el resto de páginas: position absolute, sin parallax */
 .custom-header-media img {
   width: 100%; height: 100%; object-fit: cover; object-position: center;
-}
-
-/* El <picture> del logo no debe interferir */
-.site-branding picture {
-  display: contents;
 }
 
 /* Gradiente sobre la imagen */
