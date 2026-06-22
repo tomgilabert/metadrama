@@ -62,25 +62,30 @@ a:hover { border-bottom-color: currentColor; }
 
 /* Home: header cubre toda la ventana */
 .custom-header.front-page-header {
+  height: 100vh;
   min-height: 100vh;
+}
+
+/* El site-header en home también es 100vh para que el nav bottom:0 funcione */
+.twentyseventeen-front-page .site-header {
   height: 100vh;
 }
 
 .custom-header-media {
   position: absolute; inset: 0;
   z-index: 0;
-  overflow: hidden;
 }
 
-/* En la home: efecto parallax con background-attachment: fixed */
-.front-page-header .custom-header-media {
-  background-image: url("/uploads/0208_telonegro.webp");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
+/* En la home: position fixed = parallax.
+   z-index: 0 en el contenedor crea stacking context pero NO rompe fixed. */
 .front-page-header .custom-header-media img {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* En el resto de páginas: position absolute, sin parallax */
@@ -138,9 +143,10 @@ a:hover { border-bottom-color: currentColor; }
   letter-spacing: .04em;
 }
 
-/* En la home: branding pegado al fondo, encima del nav */
+/* En la home: branding pegado al fondo del custom-header, encima del nav */
 .twentyseventeen-front-page .site-branding {
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
+  align-self: flex-end;
 }
 .twentyseventeen-front-page .site-branding .custom-logo {
   width: 100px; height: 100px;
