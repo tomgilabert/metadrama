@@ -71,17 +71,17 @@ a:hover { border-bottom-color: currentColor; }
   overflow: hidden;
 }
 
-/* En la home: position fixed crea el efecto parallax (el telón se queda fijo
-   mientras el contenido sube por encima) */
+/* En la home: efecto parallax con background-attachment: fixed.
+   La imagen se mueve más lento que el scroll, creando la ilusión
+   de que el telón sube y revela la imagen. */
+.front-page-header .custom-header-media {
+  background-image: url("/uploads/0208_telonegro.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 .front-page-header .custom-header-media img {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  display: none;
 }
 
 /* En el resto de páginas: position absolute, sin parallax */
@@ -104,8 +104,11 @@ a:hover { border-bottom-color: currentColor; }
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.5rem 1rem 1.5rem;
+  padding: 1.5rem 1rem;
   color: var(--color-header-text);
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
 }
 .site-branding .custom-logo {
   width: 80px; height: 80px;
@@ -136,15 +139,12 @@ a:hover { border-bottom-color: currentColor; }
   letter-spacing: .04em;
 }
 
-/* En la home: branding centrado vertical como en el original */
+/* En la home: branding pegado al fondo (vertical-align: bottom) */
 .twentyseventeen-front-page .site-branding {
-  flex-direction: column;
-  text-align: center;
-  gap: .75rem;
-  align-items: center;
+  padding-bottom: 1rem;
 }
 .twentyseventeen-front-page .site-branding .custom-logo {
-  width: 120px; height: 120px;
+  width: 100px; height: 100px;
 }
 
 /* ---------- Navigation ---------- */
@@ -153,9 +153,10 @@ a:hover { border-bottom-color: currentColor; }
   background: var(--color-nav-bg);
   border-bottom: 1px solid var(--color-border);
   border-top: 1px solid var(--color-border);
+  font-size: 1rem;
 }
 .navigation-top .wrap {
-  max-width: var(--max-width-wide);
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -166,12 +167,12 @@ a:hover { border-bottom-color: currentColor; }
 }
 .main-navigation ul.menu > li > a {
   display: block;
-  padding: .85rem 1.2rem;
+  padding: 0.5em 1em;
   color: var(--color-link);
   font-weight: 600;
-  font-size: .82rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: normal;
+  text-transform: none;
   border-bottom: 2px solid transparent;
 }
 .main-navigation ul.menu > li > a:hover,
