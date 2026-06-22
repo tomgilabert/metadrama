@@ -1,12 +1,8 @@
-name = "metadrama-auth"
+name = "auth"
 main = "index.js"
 compatibility_date = "2024-11-01"
-account_id = "REEMPLAZAR_POR_TU_ACCOUNT_ID"
 
-# Los secrets se definen con:
-#   wrangler secret put OAUTH_CLIENT_ID
-#   wrangler secret put OAUTH_CLIENT_SECRET
-#   wrangler secret put ALLOWED_ORIGIN
-
-[vars]
-# Solo variables no sensibles. Los secrets van aparte.
+# Secrets (definir con wrangler secret put):
+#   OAUTH_CLIENT_ID
+#   OAUTH_CLIENT_SECRET
+#   ALLOWED_ORIGIN

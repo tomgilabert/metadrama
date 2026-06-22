@@ -2,10 +2,8 @@ backend:
   name: github
   repo: tomgilabert/metadrama
   branch: main
-  base_url: https://auth.metadrama.workers.dev
+  base_url: https://auth.tom-gilabert.workers.dev
   auth_endpoint: /auth
-  # app_id se rellenará con el Client ID de la GitHub OAuth App
-
 # Publicaciones en Markdown dentro de src/content/pages
 media_folder: "public/uploads"
 public_folder: "/uploads"
