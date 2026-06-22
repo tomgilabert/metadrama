@@ -1,0 +1,19 @@
+---
+import Page from "../layouts/Page.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages");
+  // Excluir "presentacion" (es la home)
+  return pages
+    .filter((p) => p.slug !== "presentacion")
+    .map((p) => ({
+      params: { slug: p.slug },
+      props: { entry: p },
+    }));
+}
+
+const { entry } = Astro.props;
+---
+
+<Page entry={entry} />

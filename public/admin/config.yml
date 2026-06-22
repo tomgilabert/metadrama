@@ -1,0 +1,55 @@
+backend:
+  name: github
+  repo: tomgilabert/metadrama
+  branch: main
+  base_url: https://auth.metadrama.workers.dev
+  auth_endpoint: /auth
+  # app_id se rellenará con el Client ID de la GitHub OAuth App
+
+# Publicaciones en Markdown dentro de src/content/pages
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+# Carpeta donde viven los Markdown de las páginas
+collections:
+  - name: "pages"
+    label: "Páginas"
+    label_singular: "Página"
+    folder: "src/content/pages"
+    create: true
+    delete: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}} — /{{slug}}"
+    sortable_fields: ["title", "date", "modified"]
+    view_filters:
+      - label: "Sin parent"
+        field: parent
+        pattern: ""
+    fields:
+      - { name: "title", label: "Título", widget: "string" }
+      - name: "parent"
+        label: "Página padre (opcional)"
+        widget: "relation"
+        collection: "pages"
+        value_field: "{{slug}}"
+        search_fields: ["title"]
+        display_fields: ["title"]
+        required: false
+      - name: "date"
+        label: "Fecha de creación"
+        widget: "datetime"
+      - name: "modified"
+        label: "Última modificación"
+        widget: "datetime"
+        required: false
+      - name: "featuredImage"
+        label: "Imagen destacada"
+        widget: "image"
+        required: false
+      - name: "draft"
+        label: "Borrador"
+        widget: "boolean"
+        default: false
+      - { name: "body", label: "Contenido", widget: "markdown" }

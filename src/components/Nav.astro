@@ -1,0 +1,37 @@
+---
+const navItems = [
+  { href: "/", label: "Presentación" },
+  { href: "/aula-teatro/", label: "Aula de Teatro" },
+  { href: "/investigacion/", label: "Investigación" },
+  { href: "/contacto/", label: "Contacto" },
+];
+
+const { currentPath = "/" } = Astro.props;
+---
+
+<nav class="main-navigation" aria-label="Navegación principal">
+  <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menú</button>
+  <ul id="primary-menu" class="menu">
+    {navItems.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          aria-current={currentPath === item.href ? "page" : undefined}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector("#primary-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+</script>

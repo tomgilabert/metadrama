@@ -1,0 +1,47 @@
+---
+import Base from "./Base.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+interface Props {
+  entry: CollectionEntry<"pages">;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const { title, featuredImage, parent, date, modified } = entry.data;
+
+// Resolver página padre para el breadcrumb
+let parentEntry: CollectionEntry<"pages"> | null = null;
+if (parent) {
+  const found = (await getCollection("pages")).find((p) => p.slug === parent);
+  parentEntry = found ?? null;
+}
+
+const currentPath = `/${entry.slug}/`;
+---
+
+<Base title={`${title} – METADRAMA`} currentPath={currentPath}>
+  {featuredImage && (
+    <div class="page-featured-image">
+      <img src={featuredImage} alt={title} />
+    </div>
+  )}
+  <header class="page-header">
+    {parentEntry && (
+      <p class="parent-link">
+        <a href={`/${parentEntry.slug}/`}>← {parentEntry.data.title}</a>
+      </p>
+    )}
+    <h1 class="page-title">{title}</h1>
+  </header>
+  <div class="wrap">
+    <article class="entry-content">
+      <Content />
+    </article>
+    {modified && (
+      <p style="margin-top:3rem;font-size:.8rem;color:var(--color-text-muted);">
+        Última modificación: {new Date(modified).toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" })}
+      </p>
+    )}
+  </div>
+</Base>

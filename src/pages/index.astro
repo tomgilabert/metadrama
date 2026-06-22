@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+// Home = página con slug "presentacion"
+const pages = await getCollection("pages");
+const home = pages.find((p) => p.slug === "presentacion") ?? pages[0];
+const { Content } = await home.render();
+const { title } = home.data;
+---
+
+<Base title="METADRAMA" currentPath="/">
+  <header class="page-header">
+    <h1 class="page-title">{title}</h1>
+  </header>
+  <div class="wrap">
+    <article class="entry-content">
+      <Content />
+    </article>
+  </div>
+</Base>

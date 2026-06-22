@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const {
+  title = "METADRAMA",
+  description = "Espacio de creación, estudio y experimentación escénica de la Universidad de Barcelona.",
+  currentPath = "/",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/uploads/1584_cropped-cropped-imagen5-1-png.png" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="colors-dark">
+    <a class="skip-link" href="#content">Saltar al contenido</a>
+    <Header currentPath={currentPath} />
+    <div id="content" class="site-content">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>

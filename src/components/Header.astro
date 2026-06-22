@@ -1,0 +1,30 @@
+---
+import Nav from "./Nav.astro";
+const { currentPath = "/" } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="custom-header">
+    <div class="custom-header-media">
+      <img src="/uploads/0208_telonegro.webp" alt="" fetchpriority="high" />
+    </div>
+    <div class="site-branding">
+      <a href="/" class="custom-logo-link" aria-label="METADRAMA - Inicio">
+        <img
+          src="/uploads/1584_cropped-cropped-imagen5-1-png.png"
+          alt="METADRAMA"
+          class="custom-logo"
+          width="140"
+          height="140"
+        />
+      </a>
+      <h1 class="site-title"><a href="/">METADRAMA</a></h1>
+      <p class="site-description">Universidad de Barcelona</p>
+    </div>
+  </div>
+  <div class="navigation-top">
+    <div class="wrap">
+      <Nav currentPath={currentPath} />
+    </div>
+  </div>
+</header>

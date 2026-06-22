@@ -1,0 +1,309 @@
+/* METADRAMA - port del tema Twenty Seventeen (dark) a Astro.
+   Paleta y tipografía basadas en el original. */
+
+:root {
+  --color-bg: #222;
+  --color-bg-soft: #2d2d2d;
+  --color-content-bg: #fff;
+  --color-text: #333;
+  --color-text-muted: #767676;
+  --color-text-light: #666;
+  --color-link: #bbb;
+  --color-link-hover: #fff;
+  --color-accent: #ddd;
+  --color-border: #eee;
+  --color-header-text: #fff;
+  --font-sans: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "Libre Franklin", Georgia, "Times New Roman", serif;
+  --max-width: 740px;
+  --max-width-wide: 1160px;
+  --header-height: 60vh;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video { max-width: 100%; height: auto; display: block; }
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s ease, color .15s ease;
+}
+a:hover { border-bottom-color: currentColor; }
+
+/* ---------- Header ---------- */
+.site-header { position: relative; }
+
+.custom-header {
+  position: relative;
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+.custom-header-media {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(.55);
+  z-index: 0;
+}
+.custom-header-media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  filter: brightness(.55);
+}
+
+.site-branding {
+  position: relative; z-index: 2;
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--color-header-text);
+}
+.site-branding .custom-logo {
+  width: 140px; height: 140px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: rgba(0,0,0,.25);
+  object-fit: contain;
+}
+.site-branding .site-title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 4rem);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-header-text);
+  text-shadow: 0 2px 12px rgba(0,0,0,.6);
+}
+.site-branding .site-title a {
+  color: inherit;
+  border-bottom: none;
+}
+.site-branding .site-description {
+  margin: .5rem 0 0;
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: .85;
+  letter-spacing: .04em;
+}
+
+/* ---------- Navigation ---------- */
+.navigation-top {
+  position: sticky; top: 0; z-index: 50;
+  background: #1a1a1a;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.navigation-top .wrap {
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.main-navigation ul.menu {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap;
+  justify-content: center;
+}
+.main-navigation ul.menu > li > a {
+  display: block;
+  padding: .85rem 1.2rem;
+  color: var(--color-link);
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-bottom: 2px solid transparent;
+}
+.main-navigation ul.menu > li > a:hover,
+.main-navigation ul.menu > li > a[aria-current="page"] {
+  color: var(--color-link-hover);
+  border-bottom-color: var(--color-accent);
+}
+.menu-toggle {
+  display: none;
+  background: none; border: 0; color: var(--color-link);
+  font-family: inherit; font-size: .85rem; padding: .85rem 1rem;
+  cursor: pointer; letter-spacing: .08em; text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .main-navigation ul.menu {
+    display: none;
+    flex-direction: column;
+    text-align: left;
+    padding-bottom: 1rem;
+  }
+  .main-navigation ul.menu.open { display: flex; }
+  .main-navigation ul.menu > li > a { padding: .6rem 1rem; }
+}
+
+/* ---------- Content ---------- */
+.site-content {
+  background: var(--color-content-bg);
+  color: var(--color-text);
+}
+.site-content .wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 5rem;
+}
+.page-header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.25rem 0;
+}
+.page-title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  letter-spacing: .02em;
+  margin: 0 0 1rem;
+  color: var(--color-text);
+}
+.entry-content { margin-top: 2rem; }
+.entry-content > * + * { margin-top: 1.25rem; }
+
+.entry-content h2 {
+  font-weight: 800;
+  font-size: 1.6rem;
+  margin: 2.5rem 0 1rem;
+  letter-spacing: .02em;
+}
+.entry-content h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 2rem 0 .75rem;
+}
+.entry-content h4 { font-weight: 700; font-size: 1.05rem; margin: 1.5rem 0 .5rem; }
+
+.entry-content p { margin: 0 0 1.25rem; }
+
+.entry-content ul,
+.entry-content ol { margin: 0 0 1.5rem; padding-left: 1.5rem; }
+.entry-content li { margin: .35rem 0; }
+.entry-content li > ul, .entry-content li > ol { margin: .35rem 0; }
+
+.entry-content blockquote {
+  margin: 1.5rem 0;
+  padding: .5rem 1.25rem;
+  border-left: 3px solid var(--color-border);
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.entry-content img {
+  margin: 1.5rem auto;
+  border-radius: 2px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+}
+
+.entry-content hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 2.5rem 0;
+}
+
+.entry-content a {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-text-muted);
+}
+.entry-content a:hover { color: #000; border-bottom-color: #000; }
+
+.entry-content figure { margin: 2rem 0; }
+.entry-content figcaption {
+  text-align: center; font-size: .85rem; color: var(--color-text-muted);
+  margin-top: .5rem; font-style: italic;
+}
+
+.entry-content table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+}
+.entry-content th, .entry-content td {
+  border: 1px solid var(--color-border);
+  padding: .6rem .8rem; text-align: left;
+}
+.entry-content th { background: #fafafa; font-weight: 700; }
+
+/* code blocks */
+.entry-content pre {
+  background: #1e1e1e; color: #f1f1f1;
+  padding: 1rem 1.25rem; border-radius: 4px; overflow-x: auto;
+  font-size: .9rem; line-height: 1.5;
+}
+.entry-content :not(pre) > code {
+  background: #f3f3f3; padding: .15rem .4rem; border-radius: 3px;
+  font-size: .9em; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+.entry-content pre code { background: transparent; padding: 0; }
+
+/* featured image */
+.page-featured-image {
+  max-width: var(--max-width-wide);
+  margin: 0 auto 1rem;
+  padding: 0 1rem;
+}
+.page-featured-image img {
+  width: 100%; max-height: 50vh; object-fit: cover;
+  border-radius: 2px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: #1a1a1a;
+  color: var(--color-link);
+  padding: 2rem 1rem 2.5rem;
+  text-align: center;
+  font-size: .85rem;
+  letter-spacing: .04em;
+}
+.site-footer a { color: var(--color-link-hover); border-bottom: 1px solid rgba(255,255,255,.25); }
+.site-footer a:hover { border-bottom-color: currentColor; }
+.site-footer .footer-social { margin-bottom: .75rem; }
+.site-footer .footer-social a {
+  display: inline-block; margin: 0 .5rem;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  width: 36px; height: 36px; line-height: 36px;
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+.site-footer .footer-social a:hover { background: rgba(255,255,255,.08); }
+
+/* ---------- Breadcrumb / parent link ---------- */
+.parent-link {
+  font-size: .85rem; color: var(--color-text-muted);
+  margin-bottom: .5rem;
+}
+.parent-link a { color: var(--color-text-muted); border-bottom-color: transparent; }
+.parent-link a:hover { color: var(--color-text); }
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: #000; color: #fff; padding: .5rem 1rem; z-index: 100;
+}
+.skip-link:focus { left: 0; }
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 768px) {
+  :root { --header-height: 50vh; }
+  .site-branding .custom-logo { width: 100px; height: 100px; }
+  .site-content .wrap { padding: 2rem 1rem 3rem; }
+}

@@ -1,0 +1,12 @@
+# Redirecciones para Cloudflare Pages
+# Mantener URLs sin extensión y con trailing slash
+
+# /metadrama/* del dominio UB -> /* (en el nuevo dominio)
+/metadrama/*  /:splat  301
+
+# Páginas sin extensión: /aula-teatro -> /aula-teatro/
+# (Astro ya genera /aula-teatro/index.html, pero por si acaso)
+/*  /:splat  200
+
+# Panel admin
+/admin  /admin/  301
