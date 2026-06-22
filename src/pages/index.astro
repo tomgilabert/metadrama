@@ -9,7 +9,7 @@ const { Content } = await home.render();
 const { title, featuredImage } = home.data;
 ---
 
-<Base title="METADRAMA" currentPath="/">
+<Base title="METADRAMA" currentPath="/" isFrontPage={true}>
   {featuredImage && (
     <div class="page-featured-image">
       <img src={featuredImage} alt={title} />

@@ -1,10 +1,11 @@
 ---
 import Nav from "./Nav.astro";
-const { currentPath = "/" } = Astro.props;
+const { currentPath = "/", isFrontPage = false } = Astro.props;
+const headerClass = isFrontPage ? "custom-header front-page-header" : "custom-header";
 ---
 
 <header class="site-header">
-  <div class="custom-header">
+  <div class={headerClass}>
     <div class="custom-header-media">
       <img src="/uploads/0208_telonegro.webp" alt="" fetchpriority="high" />
     </div>

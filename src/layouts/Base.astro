@@ -7,13 +7,17 @@ interface Props {
   title?: string;
   description?: string;
   currentPath?: string;
+  isFrontPage?: boolean;
 }
 
 const {
   title = "METADRAMA",
   description = "Espacio de creación, estudio y experimentación escénica de la Universidad de Barcelona.",
   currentPath = "/",
+  isFrontPage = false,
 } = Astro.props;
+
+const bodyClass = isFrontPage ? "colors-dark twentyseventeen-front-page" : "colors-dark";
 ---
 
 <!doctype html>
@@ -39,9 +43,9 @@ const {
       rel="stylesheet"
     />
   </head>
-  <body class="colors-dark">
+  <body class={bodyClass}>
     <a class="skip-link" href="#content">Saltar al contenido</a>
-    <Header currentPath={currentPath} />
+    <Header currentPath={currentPath} isFrontPage={isFrontPage} />
     <div id="content" class="site-content">
       <slot />
     </div>
