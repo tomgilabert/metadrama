@@ -60,13 +60,14 @@ a:hover { border-bottom-color: currentColor; }
   background-color: #000;
 }
 
-/* Home: header cubre toda la ventana */
+/* Home: header cubre toda la ventana, fondo TRANSPARENTE
+   para que la imagen fixed se vea a través del header */
 .custom-header.front-page-header {
   height: 100vh;
   min-height: 100vh;
+  background: transparent;
 }
 
-/* El site-header en home también es 100vh para que el nav bottom:0 funcione */
 .twentyseventeen-front-page .site-header {
   height: 100vh;
 }
@@ -74,17 +75,19 @@ a:hover { border-bottom-color: currentColor; }
 .custom-header-media {
   position: absolute; inset: 0;
   z-index: 0;
-  overflow: hidden;
 }
 
-/* En la home: parallax con JS. La imagen se mueve hacia arriba
-   más lento que el scroll, creando el efecto de telón que se levanta. */
+/* En la home: imagen FIJA en el viewport (parallax CSS puro).
+   La imagen no se mueve al hacer scroll. El header sube y la revela.
+   El contenido (con fondo sólido #222) la cubre al subir. */
 .custom-header.front-page-header .custom-header-media img {
-  width: 100%;
-  height: 120%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   object-position: center;
-  will-change: transform;
 }
 
 /* En el resto de páginas: position absolute, sin parallax */
@@ -240,11 +243,12 @@ a:hover { border-bottom-color: currentColor; }
 }
 
 /* ---------- Content ---------- */
+/* Fondo sólido #222 para cubrir la imagen fija del parallax en la home */
 .site-content {
   background: var(--color-content-bg);
   color: var(--color-text);
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 .site-content .wrap {
   max-width: var(--max-width);
@@ -361,7 +365,7 @@ a:hover { border-bottom-color: currentColor; }
   letter-spacing: .04em;
   border-top: 1px solid var(--color-border);
   position: relative;
-  z-index: 2;
+  z-index: 10;
 }
 .site-footer a { color: var(--color-link-hover); border-bottom: 1px solid rgba(255,255,255,.25); }
 .site-footer a:hover { border-bottom-color: currentColor; }

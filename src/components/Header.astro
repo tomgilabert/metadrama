@@ -43,7 +43,6 @@ const navClass = isFrontPage ? "navigation-top front-page-nav" : "navigation-top
       var nav = document.querySelector('.navigation-top');
       var header = document.querySelector('.custom-header');
       var scrollDown = document.querySelector('.menu-scroll-down');
-      var img = header && header.querySelector('.custom-header-media img');
       if (!nav || !header) return;
 
       function onScroll() {
@@ -57,13 +56,6 @@ const navClass = isFrontPage ? "navigation-top front-page-nav" : "navigation-top
         } else {
           nav.classList.remove('site-navigation-fixed');
           if (scrollDown) scrollDown.style.display = '';
-        }
-
-        // Parallax: la imagen se mueve hacia abajo a 0.4x la velocidad del scroll.
-        // Como el header sube a 1x pero la imagen solo baja a 0.4x, el efecto
-        // es que el telón se levanta revelando el contenido desde abajo.
-        if (img && scrolled < headerHeight) {
-          img.style.transform = 'translateY(' + (scrolled * 0.4) + 'px)';
         }
       }
       window.addEventListener('scroll', onScroll, { passive: true });
