@@ -77,7 +77,7 @@ a:hover { border-bottom-color: currentColor; }
 }
 
 /* En la home: position fixed = parallax.
-   z-index: 0 en el contenedor crea stacking context pero NO rompe fixed. */
+   La imagen se queda fija en el viewport mientras el contenido sube. */
 .front-page-header .custom-header-media img {
   position: fixed;
   top: 0;
@@ -86,11 +86,17 @@ a:hover { border-bottom-color: currentColor; }
   height: 100vh;
   object-fit: cover;
   object-position: center;
+  z-index: 0;
 }
 
 /* En el resto de páginas: position absolute, sin parallax */
 .custom-header-media img {
   width: 100%; height: 100%; object-fit: cover; object-position: center;
+}
+
+/* El <picture> del logo no debe interferir */
+.site-branding picture {
+  display: contents;
 }
 
 /* Gradiente sobre la imagen */
@@ -164,6 +170,7 @@ a:hover { border-bottom-color: currentColor; }
 .navigation-top.front-page-nav {
   position: absolute;
   bottom: 0;
+  top: auto;
   left: 0;
   right: 0;
   width: 100%;

@@ -150,6 +150,10 @@ async function rewriteHtml(file, imageMap) {
     const altMatch = (before + " " + (after || "")).match(/\balt="([^"]*)"/);
     const alt = altMatch ? altMatch[1] : "";
 
+    // No optimizar imágenes del header (position:fixed del parallax)
+    const allAttrs = before + " " + (after || "");
+    if (/\bfetchpriority=["']high["']/.test(allAttrs)) return match;
+
     // Conservar class/style si los había
     const cls = (before + " " + (after || "")).match(/\bclass="([^"]*)"/);
     const style = (before + " " + (after || "")).match(/\bstyle="([^"]*)"/);
