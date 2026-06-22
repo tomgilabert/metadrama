@@ -53,7 +53,7 @@ a:hover { border-bottom-color: currentColor; }
 
 .custom-header {
   position: relative;
-  min-height: 22vh;
+  min-height: 26vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,7 +127,7 @@ a:hover { border-bottom-color: currentColor; }
   margin: 0;
   font-family: var(--font-sans);
   font-weight: 800;
-  font-size: clamp(1.4rem, 3.8vw, 2.4rem);
+  font-size: clamp(1.2rem, 3.6vw, 2.2rem);
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--color-header-text);
