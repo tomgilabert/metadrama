@@ -6,10 +6,15 @@ import { getCollection } from "astro:content";
 const pages = await getCollection("pages");
 const home = pages.find((p) => p.slug === "presentacion") ?? pages[0];
 const { Content } = await home.render();
-const { title } = home.data;
+const { title, featuredImage } = home.data;
 ---
 
 <Base title="METADRAMA" currentPath="/">
+  {featuredImage && (
+    <div class="page-featured-image">
+      <img src={featuredImage} alt={title} />
+    </div>
+  )}
   <header class="page-header">
     <h1 class="page-title">{title}</h1>
   </header>
