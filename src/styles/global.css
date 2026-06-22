@@ -53,9 +53,9 @@ a:hover { border-bottom-color: currentColor; }
 
 .custom-header {
   position: relative;
-  min-height: 30vh;
+  min-height: 22vh;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   background-color: #000;
 }
