@@ -263,8 +263,6 @@ a:hover { border-bottom-color: currentColor; }
 .page-featured-image img {
   width: 100%;
   height: auto;
-  max-height: 60vh;
-  object-fit: cover;
   display: block;
 }
 
