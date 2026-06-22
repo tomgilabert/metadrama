@@ -53,9 +53,9 @@ a:hover { border-bottom-color: currentColor; }
 
 .custom-header {
   position: relative;
-  min-height: 40vh;
+  min-height: 30vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   background-color: #000;
 }
@@ -104,7 +104,7 @@ a:hover { border-bottom-color: currentColor; }
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 1.5rem;
   color: var(--color-header-text);
 }
 .site-branding .custom-logo {
@@ -141,6 +141,7 @@ a:hover { border-bottom-color: currentColor; }
   flex-direction: column;
   text-align: center;
   gap: .75rem;
+  align-items: center;
 }
 .twentyseventeen-front-page .site-branding .custom-logo {
   width: 120px; height: 120px;
