@@ -189,7 +189,7 @@ a:hover { border-bottom-color: currentColor; }
 }
 .main-navigation ul.menu > li > a {
   display: block;
-  padding: 0.5em 1em;
+  padding: 1em 1.25em;
   color: var(--color-link);
   font-weight: 600;
   font-size: 1rem;
