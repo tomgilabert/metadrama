@@ -2,6 +2,7 @@
 import Nav from "./Nav.astro";
 const { currentPath = "/", isFrontPage = false } = Astro.props;
 const headerClass = isFrontPage ? "custom-header front-page-header" : "custom-header";
+const navClass = isFrontPage ? "navigation-top front-page-nav" : "navigation-top";
 ---
 
 <header class="site-header">
@@ -22,9 +23,48 @@ const headerClass = isFrontPage ? "custom-header front-page-header" : "custom-he
       <h1 class="site-title"><a href="/">METADRAMA</a></h1>
     </div>
   </div>
-</header>
-<div class="navigation-top">
-  <div class="wrap">
-    <Nav currentPath={currentPath} />
+  <div class={navClass}>
+    <div class="wrap">
+      <Nav currentPath={currentPath} />
+      {isFrontPage && (
+        <a href="#content" class="menu-scroll-down" aria-label="Bajar al contenido">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" style="transform: rotate(90deg);">
+            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+          </svg>
+        </a>
+      )}
+    </div>
   </div>
-</div>
+</header>
+
+{isFrontPage && (
+  <script>
+    (function() {
+      var nav = document.querySelector('.navigation-top');
+      var header = document.querySelector('.custom-header');
+      var scrollDown = document.querySelector('.menu-scroll-down');
+      if (!nav || !header) return;
+
+      function onScroll() {
+        var headerBottom = header.offsetTop + header.offsetHeight;
+        if (window.scrollY >= headerBottom - 1) {
+          nav.classList.add('site-navigation-fixed');
+          if (scrollDown) scrollDown.style.display = 'none';
+        } else {
+          nav.classList.remove('site-navigation-fixed');
+          if (scrollDown) scrollDown.style.display = '';
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      if (scrollDown) {
+        scrollDown.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.getElementById('content');
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+)}

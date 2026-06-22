@@ -60,9 +60,10 @@ a:hover { border-bottom-color: currentColor; }
   background-color: #000;
 }
 
-/* Home: header más grande con parallax */
+/* Home: header cubre toda la ventana */
 .custom-header.front-page-header {
-  min-height: 75vh;
+  min-height: 100vh;
+  height: 100vh;
 }
 
 .custom-header-media {
@@ -71,9 +72,7 @@ a:hover { border-bottom-color: currentColor; }
   overflow: hidden;
 }
 
-/* En la home: efecto parallax con background-attachment: fixed.
-   La imagen se mueve más lento que el scroll, creando la ilusión
-   de que el telón sube y revela la imagen. */
+/* En la home: efecto parallax con background-attachment: fixed */
 .front-page-header .custom-header-media {
   background-image: url("/uploads/0208_telonegro.webp");
   background-size: cover;
@@ -89,7 +88,7 @@ a:hover { border-bottom-color: currentColor; }
   width: 100%; height: 100%; object-fit: cover; object-position: center;
 }
 
-/* Gradiente sobre la imagen (oscurece la parte superior) */
+/* Gradiente sobre la imagen */
 .custom-header-media::after {
   content: "";
   position: absolute;
@@ -139,9 +138,9 @@ a:hover { border-bottom-color: currentColor; }
   letter-spacing: .04em;
 }
 
-/* En la home: branding pegado al fondo (vertical-align: bottom) */
+/* En la home: branding pegado al fondo, encima del nav */
 .twentyseventeen-front-page .site-branding {
-  padding-bottom: 1rem;
+  padding-bottom: 4rem;
 }
 .twentyseventeen-front-page .site-branding .custom-logo {
   width: 100px; height: 100px;
@@ -155,10 +154,33 @@ a:hover { border-bottom-color: currentColor; }
   border-top: 1px solid var(--color-border);
   font-size: 1rem;
 }
+/* En la home: nav empieza abajo del header (absolute bottom) */
+.navigation-top.front-page-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 3;
+}
+/* Cuando se hace scroll past el header, JS añe esta clase */
+.navigation-top.front-page-nav.site-navigation-fixed {
+  position: fixed;
+  bottom: auto;
+  top: 0;
+  z-index: 1000;
+}
 .navigation-top .wrap {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-navigation {
+  flex: 1;
 }
 .main-navigation ul.menu {
   list-style: none; margin: 0; padding: 0;
@@ -186,6 +208,18 @@ a:hover { border-bottom-color: currentColor; }
   font-family: inherit; font-size: .85rem; padding: .85rem 1rem;
   cursor: pointer; letter-spacing: .08em; text-transform: uppercase;
 }
+
+/* Scroll-down arrow (solo en home) */
+.menu-scroll-down {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-link);
+  padding: 0.5em;
+  border-bottom: none;
+}
+.menu-scroll-down:hover { color: var(--color-link-hover); }
 
 @media (max-width: 768px) {
   .menu-toggle { display: block; }
