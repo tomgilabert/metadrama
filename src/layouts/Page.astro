@@ -38,10 +38,5 @@ const currentPath = `/${entry.slug}/`;
     <article class="entry-content">
       <Content />
     </article>
-    {modified && (
-      <p style="margin-top:3rem;font-size:.8rem;color:var(--color-text-muted);">
-        Última modificación: {new Date(modified).toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" })}
-      </p>
-    )}
   </div>
 </Base>
