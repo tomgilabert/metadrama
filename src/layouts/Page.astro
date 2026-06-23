@@ -8,7 +8,7 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const { title, featuredImage, parent, date, modified } = entry.data;
+const { title, featuredImage, parent } = entry.data;
 
 // Resolver página padre para el breadcrumb
 let parentEntry: CollectionEntry<"pages"> | null = null;
