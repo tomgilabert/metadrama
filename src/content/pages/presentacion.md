@@ -38,14 +38,6 @@ Este 2026 estamos de celebración por nuestro 15º aniversario. ¡Celebra con no
 
 - - -
 
-## Prova
-
-Acceder a [prova](https://metadrama.octo.casa/prova).
-
-![](/uploads/0052_franc-cc-a7ois-bunel.jpg)
-
-- - -
-
 ## Becas de Teatro Universitario
 
 Si eres estudiante de grado o máster en la UB, puedes optar a unas becas remuneradas para aprender y colaborar con nosotros. Más información: [Becas de Teatro Universitario](/beques/).
