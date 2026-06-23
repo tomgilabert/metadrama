@@ -419,8 +419,8 @@ a:hover { border-bottom-color: currentColor; }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
 }
 
 .team-card {
@@ -436,7 +436,7 @@ a:hover { border-bottom-color: currentColor; }
 
 .team-card h3 {
   margin: 0 0 .35rem;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
@@ -444,19 +444,23 @@ a:hover { border-bottom-color: currentColor; }
   margin: 0 0 .75rem;
   font-size: .85rem;
   color: var(--color-text-muted);
+  text-align: justify;
+  hyphens: auto;
 }
 
 .team-card p {
   margin: 0 0 .75rem;
-  font-size: .9rem;
+  font-size: .95rem;
   line-height: 1.5;
+  text-align: justify;
+  hyphens: auto;
 }
 .team-card p:last-child {
   margin-bottom: 0;
 }
 
 @media (max-width: 900px) {
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 }
 
 @media (max-width: 600px) {
