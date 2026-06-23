@@ -40,12 +40,13 @@ const navClass = isFrontPage ? "navigation-top front-page-nav" : "navigation-top
 {isFrontPage && (
   <script>
     (function() {
-      var nav = document.querySelector('.navigation-top');
-      var header = document.querySelector('.custom-header');
-      var scrollDown = document.querySelector('.menu-scroll-down');
+      const nav = document.querySelector('.navigation-top') as HTMLElement | null;
+      const header = document.querySelector('.custom-header') as HTMLElement | null;
+      const scrollDown = document.querySelector('.menu-scroll-down') as HTMLElement | null;
       if (!nav || !header) return;
 
       function onScroll() {
+        if (!nav || !header) return;
         var scrolled = window.scrollY;
         var headerHeight = header.offsetHeight;
 

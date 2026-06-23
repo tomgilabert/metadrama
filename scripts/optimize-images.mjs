@@ -7,7 +7,7 @@
 // absolutas /uploads/x.png en Markdown). No toca los archivos fuente.
 
 import sharp from "sharp";
-import { readFile, writeFile, readdir, stat, mkdir } from "node:fs/promises";
+import { readFile, writeFile, readdir, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join, dirname, basename, extname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
