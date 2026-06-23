@@ -407,7 +407,13 @@ a:hover { border-bottom-color: currentColor; }
 /* ---------- Mobile tweaks ---------- */
 @media (max-width: 768px) {
   :root { --header-height: 50vh; }
-  .site-branding { padding: 1rem; }
+  /* Home: header más pequeño en móvil para que el menú sea visible */
+  .twentyseventeen-front-page .site-header,
+  .custom-header.front-page-header {
+    height: 90vh;
+    min-height: 90vh;
+  }
+  .site-branding { padding: 1rem; padding-left: 2rem; }
   .site-branding .custom-logo { width: 60px; height: 60px; }
   .twentyseventeen-front-page .site-branding .custom-logo { width: 90px; height: 90px; }
   .site-content .wrap { padding: 2rem 1rem 3rem; }
