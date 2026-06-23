@@ -38,7 +38,7 @@ Este 2026 estamos de celebración por nuestro 15º aniversario. ¡Celebra con no
 
 Prova
 
-Acceder a [prova](metadrama.octo.casa/prova).
+Acceder a [prova](https://metadrama.octo.casa/prova).
 
 - - -
 
