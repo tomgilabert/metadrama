@@ -36,9 +36,13 @@ Este 2026 estamos de celebración por nuestro 15º aniversario. ¡Celebra con no
 
 ![](/uploads/1578_logo-15-aniversari.png)
 
-Prova
+- - -
+
+## Prova
 
 Acceder a [prova](https://metadrama.octo.casa/prova).
+
+![](/uploads/0052_franc-cc-a7ois-bunel.jpg)
 
 - - -
 
