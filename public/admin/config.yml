@@ -46,6 +46,11 @@ collections:
         label: "Imagen destacada"
         widget: "image"
         required: false
+      - name: "wide"
+        label: "Página ancha"
+        widget: "boolean"
+        default: false
+        hint: "Usar todo el ancho disponible (útil para páginas de equipo o galerías)"
       - name: "draft"
         label: "Borrador"
         widget: "boolean"

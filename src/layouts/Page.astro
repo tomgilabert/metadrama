@@ -8,7 +8,7 @@ interface Props {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-const { title, featuredImage, parent } = entry.data;
+const { title, featuredImage, parent, wide } = entry.data;
 
 // Resolver página padre para el breadcrumb
 let parentEntry: CollectionEntry<"pages"> | null = null;
@@ -34,7 +34,7 @@ const currentPath = `/${entry.slug}/`;
     )}
     <h1 class="page-title">{title}</h1>
   </header>
-  <div class="wrap">
+  <div class:list={["wrap", wide && "wrap-wide"]}>
     <article class="entry-content">
       <Content />
     </article>

@@ -4,6 +4,7 @@ parent: ""
 date: 2026-06-23
 modified: 2026-06-23
 featuredImage: ""
+wide: true
 draft: false
 ---
 

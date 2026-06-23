@@ -9,6 +9,7 @@ const pages = defineCollection({
     parent: z.string().optional(),
     featuredImage: z.string().optional(),
     featuredMediaId: z.number().optional(),
+    wide: z.boolean().default(false),
     draft: z.boolean().default(false),
   }),
 });
