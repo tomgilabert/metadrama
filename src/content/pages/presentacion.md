@@ -74,8 +74,6 @@ Conferencias recientes o próximas:
 
 ---
 
-```
-Últimas noticias de METADRAMA en Instagram (@MetadramaUB)
-```
+[Últimas noticias de METADRAMA en Instagram (@MetadramaUB)](https://www.instagram.com/metadramaub/)
 
 ---
