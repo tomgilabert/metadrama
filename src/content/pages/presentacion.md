@@ -1,23 +1,22 @@
 ---
-title: "Presentación"
-date: "2022-02-13T06:37:49"
-modified: "2026-05-18T11:12:33"
-featuredImage: "/uploads/0053_imagen-teatro.jpg"
+title: Presentación
+date: 2022-02-13T06:37:49
+modified: 2026-05-18T11:12:33
+featuredImage: /uploads/0053_imagen-teatro.jpg
 draft: false
 ---
-
 ## METADRAMA
 
 Dirección de [Gaston Gilabert](/gastongilabert/)
 
----
+- - -
 
 ![](/uploads/1364_logo-letra-blanca-2.png)
 
-- [**Aula de Teatro**](/aula-teatro/)
-- [**Grupo de Investigación**](/investigacion/)
+* **[Aula de Teatro](/aula-teatro/)**
+* **[Grupo de Investigación](/investigacion/)**
 
----
+- - -
 
 ![](/uploads/1547_gmn4.png)
 
@@ -29,7 +28,7 @@ La actividad de METADRAMA se articula en dos ámbitos distintos pero complementa
 
 (2) **[Grupo de Investigación](/investigacion/)**, que impulsa trabajos filológicos, edición de textos y reflexión teórica sobre la escena con participación de reconocidos investigadores de universidades nacionales e internacionales. En este ámbito se integra el proyecto de investigación en curso, que cuenta con el apoyo del Ministerio de Ciencia, Innovación y Universidades.
 
----
+- - -
 
 ## 15 AÑOS
 
@@ -37,7 +36,11 @@ Este 2026 estamos de celebración por nuestro 15º aniversario. ¡Celebra con no
 
 ![](/uploads/1578_logo-15-aniversari.png)
 
----
+Prova
+
+Acceder a [prova](metadrama.octo.casa/prova).
+
+- - -
 
 ## Becas de Teatro Universitario
 
@@ -45,7 +48,7 @@ Si eres estudiante de grado o máster en la UB, puedes optar a unas becas remune
 
 ![](/uploads/1595_cartell-beques.jpg)
 
----
+- - -
 
 ## Ciclo de Radioteatro
 
@@ -53,27 +56,28 @@ Como una de las acciones por nuestro 15º aniversario, estamos realizando un CIC
 
 ![](/uploads/1693_poster-vertical-nuevo-episodio-podcast-ilustrado-amarillo.png)
 
----
+- - -
 
 Conferencias recientes o próximas:
 
 ![](/uploads/1752_conf-beata-calderon.png)
 
----
+- - -
 
 ## Otras actividades y ámbitos
 
-- [ECDOTEA: Seminario permanente de ecdótica teatral](/ecdotea/)
-- [Taller de interpretación de verso clásico](/taller/)
-- [Simposio Internacional METADRAMA](/simposio/)
-- [Ciclo de Radioteatro](/radioteatro/)
-- [Becas de colaboración UB de teatro universitario](/beques/)
-- Últimas puestas en escena:
-  - [La casa de los celos, de Miguel de Cervantes](/la-casa-de-los-celos/)
-  - [La cueva de Salamanca, de Juan Ruiz de Alarcón](/cueva/)
+* [ECDOTEA: Seminario permanente de ecdótica teatral](/ecdotea/)
+* [Taller de interpretación de verso clásico](/taller/)
+* [Simposio Internacional METADRAMA](/simposio/)
+* [Ciclo de Radioteatro](/radioteatro/)
+* [Becas de colaboración UB de teatro universitario](/beques/)
+* Últimas puestas en escena:
 
----
+  * [La casa de los celos, de Miguel de Cervantes](/la-casa-de-los-celos/)
+  * [La cueva de Salamanca, de Juan Ruiz de Alarcón](/cueva/)
+
+- - -
 
 [Últimas noticias de METADRAMA en Instagram (@MetadramaUB)](https://www.instagram.com/metadramaub/)
 
----
+- - -
