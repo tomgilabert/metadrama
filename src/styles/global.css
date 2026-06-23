@@ -149,7 +149,7 @@ a:hover { border-bottom-color: currentColor; }
 
 /* En la home: branding pegado al fondo del custom-header, encima del nav */
 .twentyseventeen-front-page .site-branding {
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
   align-self: flex-end;
 }
 .twentyseventeen-front-page .site-branding .custom-logo {
